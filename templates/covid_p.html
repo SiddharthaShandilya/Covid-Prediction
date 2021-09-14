@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/css/form.css"/>
+  
+</head>
+
+
+<body>
+
+  <script>
+
+    function covidPrediction()
+            {
+                console.log("Inside covidPrediction function");
+                let i;
+
+                let formData = new FormData();
+                var fever =  parseInt(document.getElementById("Fever").value);
+                var tiredness =  parseInt(document.getElementById("Tiredness").value);
+                var Dry_Cough =  parseInt(document.getElementById("Dry-Cough").value);
+                var Difficulty_in_Breathing =  document.getElementById("Difficulty_in_Breathing").value
+                var Sore_Throat =  document.getElementById("Sore-Throat").value;
+                var None_Sympton =  document.getElementById("None_Sympton").value;
+                var Pains = document.getElementById("Pains").value;
+                var Nasal_Congestion = document.getElementById("Nasal-Congestion").value;
+                var Runny_Nose = document.getElementById("Runny-Nose").value;
+                var Diarrhea = document.getElementById("Diarrhea").value;
+                var Age = document.getElementById("AGE").value;
+                var Person_in_Contact = document.getElementById("Person_in_Contact").value;
+
+                var x = parseInt(fever)+ parseInt(tiredness)+ parseInt(Dry_Cough)+ parseInt(Difficulty_in_Breathing)+parseInt(Sore_Throat)+ parseInt(None_Sympton)+ parseInt(Pains)+parseInt(Nasal_Congestion)+ parseInt(Runny_Nose)+ parseInt(Diarrhea);
+                console.log(typeof x);
+                console.log(x);
+                if(x <=6){
+                  document.getElementById("output1").innerHTML = " You have Low chances of Covid";
+                }
+                else if(x >=7 && x<8 )
+                {
+                  document.getElementById("output1").innerHTML = " YOU have MOderate Chances of Covid \n"+
+                  "It is Advise that you Be In Quarentine";
+                }
+                else{
+                  document.getElementById("output1").innerHTML= " You Have Very High Chances Of Covid \n"+ 
+                  " It is advised that you seek Medical advise"
+                }
+
+
+                                
+                formData.append('fever',fever);
+                formData.append('tiredness',tiredness);
+                formData.append('Dry_Cough',Dry_Cough);
+                formData.append('Difficulty_in_Breathing',Difficulty_in_Breathing);
+                formData.append('Sore_Throat',Sore_Throat);
+                formData.append('None_Sympton',None_Sympton);
+                formData.append('Pains',Pains);
+                formData.append('Nasal_Congestion',Nasal_Congestion);
+                formData.append('Runny_Nose',Runny_Nose);
+                formData.append('Diarrhea',Diarrhea);
+                formData.append('Age',Age);
+                formData.append('Person_in_Contact',Person_in_Contact);
+
+
+                console.log(formData.get('Sore_Throat')); // outputs 894489 correctly
+                console.log(formData.get('Person_in_Contact')); // outputs 'test' correctly
+
+
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET","http://192.168.29.20/cgi-bin/test_covid_back.py?Fever="+formData+"tiredness="+tiredness+"Dry_Cough="+Dry_Cough
+                +"Difficulty_in_Breathing="+Difficulty_in_Breathing+"Sore_Throat="+Sore_Throat+"None_Sympton="+None_Sympton+
+                "Pains="+Pains+"Nasal_Congestion="+Nasal_Congestion+"Runny_Nose="+Runny_Nose+
+                "Runny_Nose="+Runny_Nose+"Diarrhea",true);
+                xhr.onload = function()
+                        {
+                            var output = xhr.responseText;
+                            document.getElementById("output1").innerHTML = output;
+                        }
+                
+            }
+</script>
+
+<div class="center">
+  <div class="scroll">
+    <h1>OUR COWEB</h1>
+  <form >
+      
+      <div class="inputbox">        
+        <label for="Fever">Fever :</label>
+        <select name="Fever" id="Fever">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+      <div class="inputbox">
+        <label for="Tiredness">Tiredness :</label>
+        <select name="Tiredness" id="Tiredness">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+      <div class="inputbox">
+        <label for="Dry-Cough">Dry-Cough :</label>
+        <select name="Dry-Cough" id="Dry-Cough">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+
+      <div class="inputbox">
+        <label for="Difficulty_in_Breathing">Difficulty_in_Breathing :</label>
+        <select name="Difficulty_in_Breathing" id="Difficulty_in_Breathing">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+
+      <div class="inputbox">
+        <label for="Sore-Throat">Sore-Throat :</label>
+        <select name="Sore-Throat" id="Sore-Throat">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+
+      <div class="inputbox">
+        <label for="None_Sympton">None_Sympton :</label>
+        <select name="None_Sympton" id="None_Sympton">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+
+
+      <div class="inputbox">
+        <label for="Pains">Pains :</label>
+        <select name="Pains" id="Pains">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+      <div class="inputbox">
+        <label for="Nasal-Congestion">Nasal-Congestion :</label>
+        <select name="Nasal-Congestion" id="Nasal-Congestion">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+      <div class="inputbox">
+        <label for="Runny-Nose">Runny-Nose :</label>
+        <br></br>
+        <select name="Runny-Nose" id="Runny-Nose">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+      <div class="inputbox">
+        <label for="Diarrhea">Diarrhea :</label>
+        
+        <select name="Diarrhea" id="Diarrhea">
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+
+        </select>
+      </div>
+
+
+      <div class="inputbox">
+        <label for="AGE">Age :</label>
+        <select name="AGE" id="AGE">
+
+          <option value="0">Age_0-9</option>
+          <option value="1">Age_10-19</option>
+          <option value="2">Age_20-24</option>
+          <option value="3">Age_25-59</option>
+          <option value="4">Age_60+</option>
+        </select>
+      </div>
+      <div class="inputbox">
+        <label for="Gender">Gender :</label>
+        <br></br>
+        <select name="Gender" id="Gender">
+          <option value="0">FEMALE</option>
+          <option value="1">MALE</option>
+
+        </select>
+      </div>
+      <div class="inputbox">
+        <label for="Person_in_Contact">Person_in_Contact :</label>
+        <br></br>
+        <select name="Person_in_Contact" id="Person_in_Contact">
+          
+          <option value="0">NO</option>
+          <option value="1">YES</option>
+        </select>
+      </div>
+     
+    </form>
+    
+  </div>
+  <div class="inputbox">
+<!--    <input type="submit" value="Submit">  
+    -->
+<div class="button">
+     <button onclick= "covidPrediction()"><strong>RUN</strong></button>
+    </div>
+
+   </div>
+  <pre>
+    <div id = "output1"><h3>{{ prediction_text }}</h3></div>
+</pre>
+ 
+</div>
+<br>
+
+
+</div>
+</body>
+</html>
+

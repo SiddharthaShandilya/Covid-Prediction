@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/css/form.css" />
+
+  
+  <style>
+    body {
+       background-image: url("https://images.hdqwalls.com/download/covid-19-ce-2560x1440.jpg");
+    }
+ </style>
+
+</head>
+
+
+<body>
+  <!--
+  <script>
+    function covidPrediction()
+    {
+      var i = document.getElementById("Fever").value
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://192.168.29.20/cgi-bin/test_covid_back.py?fever=" + i, true);
+      xhr.send();
+      xhr.onload = function (){
+          var output = xhr.responseText;
+          if (x <= 6)
+          {
+            document.getElementById("output1").innerHTML = " You have Low chances of Covid";
+          } 
+          else if (x >= 7 && x < 8)
+          {
+            document.getElementById("output1").innerHTML = " YOU have MOderate Chances of Covid \n" +
+              "It is Advise that you Be In Quarentine";
+          }
+          else
+          {
+            document.getElementById("output1").innerHTML = " You Have Very High Chances Of Covid \n" +
+              " It is advised that you seek Medical advise"
+          } // document.getElementById("output1").innerHTML=output;
+         } 
+    }
+  </script>
+
+  -->
+
+
+  <div class="center">
+    <div class="scroll">
+      <h1>OUR COVEB</h1>
+
+      <form action="/predict", method="post">
+
+
+        <div class="inputbox">
+          <label for="Fever">Fever :</label>
+          <select name="Fever" id="Fever">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+          </select>
+        </div>
+
+        <div class="inputbox">
+          <label for="Tiredness">Tiredness :</label>
+          <select name="Tiredness" id="Tiredness">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+          </select>
+        </div>
+
+        <div class="inputbox">
+          <label for="Dry-Cough">Dry-Cough :</label>
+          <select name="Dry-Cough" id="Dry-Cough">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Difficulty_in_Breathing">Difficulty_in_Breathing :</label>
+          <select name="Difficulty_in_Breathing" id="Difficulty_in_Breathing">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Sore-Throat">Sore-Throat :</label>
+          <select name="Sore-Throat" id="Sore-Throat">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="None_Sympton">None_Sympton :</label>
+          <select name="None_Sympton" id="None_Sympton">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+
+        <div class="inputbox">
+          <label for="Pains">Pains :</label>
+          <select name="Pains" id="Pains">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Nasal-Congestion">Nasal-Congestion :</label>
+          <select name="Nasal-Congestion" id="Nasal-Congestion">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Runny-Nose">Runny-Nose :</label>
+          <br></br>
+          <select name="Runny-Nose" id="Runny-Nose">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Diarrhea">Diarrhea :</label>
+          <label for="Diarrhea"></label>
+
+          <select name="Diarrhea" id="Diarrhea">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Age">Age :</label>
+          <br></br>
+          <label for="Age"></label>
+
+          <select name="AGE" id="AGE">
+            <option value="0">Age_0-9</option>
+            <option value="1">Age_10-19</option>
+            <option value="2">Age_20-24</option>
+            <option value="3">Age_25-59</option>
+            <option value="4">Age_60+</option>
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Gender">Gender :</label>
+          <br></br>
+          <select name="Gender" id="Gender">
+            <option value="0">FEMALE</option>
+            <option value="1">MALE</option>
+
+          </select>
+        </div>
+
+
+        <div class="inputbox">
+          <label for="Person_in_Contact">Person_in_Contact :</label>
+          <br></br>
+          <select name="Person_in_Contact" id="Person_in_Contact">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+          </select>
+        </div>
+
+      </form>
+
+    </div>
+      
+          <div class="button">
+        <!--<input type="submit" value="Submit">
+          -->
+          <button onclick="covidPrediction()"><strong>RUN</strong></button>
+
+
+        </div>
+    </form>
+    <pre>
+      <h3>{{ prediction_text }}</h3>
+    </pre>
+
+  </div>
+</br>
+
+
+  </div>
+</body>
+
+</html>

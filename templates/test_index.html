@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/css/form.css" />
+
+</head>
+
+
+<body>
+
+
+
+    <!--_________________________________________________________________________________________________________________________________________________________-->
+
+    <!-- 
+    JavaScript CODE FROM HERE ON OUT
+-->
+    <!--_________________________________________________________________________________________________________________________________________________________-->
+
+
+
+
+
+    <!--_________________________________________________________________________________________________________________________________________________________-->
+
+    <!-- 
+    HTML CODE FROM HERE ON OUT
+-->
+    <!--_________________________________________________________________________________________________________________________________________________________-->
+
+
+    <div class="center">
+        <div class="scroll">
+            <h1>OUR COWEB</h1>
+            <form action="/predict" method="POST">
+
+                <div class="inputbox">
+                    <label for="Fever">Fever :</label>
+                    <select name="Fever" id="Fever">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label for="Tiredness">Tiredness :</label>
+                    <select name="Tiredness" id="Tiredness">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label for="Dry-Cough">Dry-Cough :</label>
+                    <select name="Dry-Cough" id="Dry-Cough">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+
+                <div class="inputbox">
+                    <label for="Difficulty_in_Breathing">Difficulty_in_Breathing :</label>
+                    <select name="Difficulty_in_Breathing" id="Difficulty_in_Breathing">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+
+                <div class="inputbox">
+                    <label for="Sore-Throat">Sore-Throat :</label>
+                    <select name="Sore-Throat" id="Sore-Throat">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label for="head_ache">Headache :</label>
+                    <select name="head_ache" id="head_ache">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+
+                <div class="inputbox">
+                    <label for="gender">Gender :</label>
+                    <select name="gender" id="gender">
+                        <option value="0">Make</option>
+                        <option value="1">Female</option>
+
+                    </select>
+                </div>
+
+
+
+                <div class="inputbox">
+                    <label for="Pains">Pains :</label>
+                    <select name="Pains" id="Pains">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="Nasal-Congestion">Nasal-Congestion :</label>
+                    <select name="Nasal-Congestion" id="Nasal-Congestion">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="Runny-Nose">Runny-Nose :</label>
+                    <br></br>
+                    <select name="Runny-Nose" id="Runny-Nose">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label for="Diarrhea">Diarrhea :</label>
+
+                    <select name="Diarrhea" id="Diarrhea">
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+
+                    </select>
+                </div>
+
+
+                <div class="inputbox">
+                    <label for="AGE">Age :</label>
+                    <select name="AGE" id="AGE">
+
+                        <option value="0">Age_0-9</option>
+                        <option value="1">Age_10-19</option>
+                        <option value="2">Age_20-24</option>
+                        <option value="3">Age_25-59</option>
+                        <option value="4">Age_60+</option>
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="Gender">Gender :</label>
+                    <br></br>
+                    <select name="Gender" id="Gender">
+                        <option value="0">FEMALE</option>
+                        <option value="1">MALE</option>
+
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="Person_in_Contact">Person_in_Contact :</label>
+                    <br></br>
+                    <select name="Person_in_Contact" id="Person_in_Contact">
+
+                        <option value="0">NO</option>
+                        <option value="1">YES</option>
+                    </select>
+                </div>
+
+
+                <div class="center">
+                <input type="submit" value="Predict">
+
+                </div>
+
+
+
+
+            </form>
+
+        </div>
+
+        <pre>
+            <div id = "output1"><h3>{{ prediction_text }}</h3></div>
+        </pre>
+
+    </div>
+    <br>
+
+
+    </div>
+</body>
+
+</html>
