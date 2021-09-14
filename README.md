@@ -1,4 +1,4 @@
-# ![WebApp](https://github.com/SiddharthaShandilya/Covid-Prediction/blob/main/demo/my_coweb%20image.jpg)
+# ![WebApp](https://github.com/SiddharthaShandilya/Covid-Prediction/blob/master/demo/my_coweb%20image.jpg)
 
 # WebApp
 <table>
